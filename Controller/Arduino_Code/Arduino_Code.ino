@@ -4,6 +4,8 @@
 #define BACKWARD_2 13
 #define PWM_1 10
 #define PWM_2 11
+#define POT_1 A0
+#define POT_2 A1
 
 #define m_forward 100
 #define m_backward 101
@@ -71,12 +73,15 @@ void setMotion(int motor, int motion)
 
 void setSpeed(int motor, int speed)
 {
+	int temp = 0;
 	switch(motor)
 	{
 		case m_left:
+			temp = map(analogRead(POT_1), 0, 1023, (speed-32>0)?speed:0, speed+32);
 			analogWrite(PWM_1, speed);
 			break;
 		case m_right:
+			temp = map(analogRead(POT_1), 0, 1023, (speed-32>0)?speed:0, speed+32);
 			analogWrite(PWM_2, speed);
 			break;
 	}

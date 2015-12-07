@@ -582,7 +582,7 @@ build.arch=AVR
     </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="USTH_SolarCar.ino">
+    <None Include="Arduino_Code.ino">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>
